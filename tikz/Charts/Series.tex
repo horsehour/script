@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+	\begin{axis}[
+	  legend style = {at={(0.5, 1.025)}, anchor = south, legend columns = -1},
+	]
+		\addplot table [x = iter, y = trainperf, col sep=tab] {data/performance.csv};
+		\addplot table [x = iter, y = valiperf, col sep=tab] {data/performance.csv};
+		\legend{Training, Validation}
+	\end{axis}
+\end{tikzpicture}

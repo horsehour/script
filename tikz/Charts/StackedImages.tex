@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+\node[fill=blue](p1) at (0,0)
+ {\resizebox{2in}{!}{\includegraphics{bertrandrussell2.jpg}}};
+\node[above=2mm,fill=red,text=white] at (p1.north) {caption};
+% .25in gap and raise .5in
+\node[right,fill=green](p2) at ($(p1.east)+(.25in,.5in)$)
+ {\resizebox{2in}{!}{\includegraphics{bertrandrussell2.jpg}}};
+\node[below=2mm,fill=red,text=white] at (p2.south) {caption};
+% ditto
+\node[right,fill=red!50](p3) at ($(p2.east)+(.25in,.5in)$)
+ {\resizebox{2in}{!}{\includegraphics{bertrandrussell2.jpg}}};
+\node[rotate=90,below=2mm,fill=red,text=white] at (p3.east) {sideways};
+\end{tikzpicture}

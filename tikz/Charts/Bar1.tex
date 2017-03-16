@@ -1,0 +1,20 @@
+\pgfplotsset{width=7cm,compat=1.8}
+
+\begin{tikzpicture}
+	\begin{axis}[
+	    ybar,
+	    enlargelimits=0.15,
+	    legend style={at={(0.5,-0.15)},
+	      anchor=north,legend columns=-1},
+	    ylabel={\#participants},
+	    symbolic x coords={8,9,10},
+	    xtick=data,
+	    nodes near coords,
+	    nodes near coords align={vertical},
+	]
+		\addplot coordinates {(8,7) (9,9) (10,4)};
+		\addplot coordinates {(8,4) (9,4) (10,4)};
+		\addplot coordinates {(8,1) (9,1) (10,1)};
+		\legend{used,understood,not understood}
+	\end{axis}
+\end{tikzpicture}

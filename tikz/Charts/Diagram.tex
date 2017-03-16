@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+\matrix[row sep=10mm,column sep=4mm ] {
+    % Top Row (release branch)
+    & \node [tag] (release) {v1.0}; & \node[commit] (c2) {2}; & & & & \node [point] (rend) {};\\
+    % Middle Row (trunk)
+    \node [tag] (trunk) {trunk}; & \node[commit] (c1) {1}; & & \node[commit] (c3) {3}; &  & \node[commit] (c5) {5}; & \node [point] (tend) {};\\
+    % Bottom Row (release branch)
+    & & \node [tag] (release2) {v2.0}; & & \node[commit] (c4) {4}; & & \node [point] (r2end) {};\\
+};
+\begin{scope}[every node/.style={midway,auto,font=\scriptsize}]
+    \draw [very thick, ->] (trunk) -- (c1) -- (c3) -- (c5) -- (tend);
+    \draw [very thick, ->] (release) -- (c2) -- (rend);
+    \draw [very thick, ->] (release2) -- (c4) -- (r2end);
+    \draw [dashed, very thick, ->] (trunk) -- node {$branch$} (release);
+    \draw [dashed, very thick, ->] (c1) -- node {$branch$} (release2);
+    \draw [dashed, very thick, ->] (c2) -- node {$merge$} (c3);
+    \draw [dashed, very thick, ->] (c4) -- node {$merge$} (c5);
+\end{scope}
+\end{tikzpicture}

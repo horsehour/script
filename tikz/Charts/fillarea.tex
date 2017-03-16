@@ -1,0 +1,53 @@
+%\documentclass[border=5mm]{standalone}
+%\usepackage{pgfplots}
+\usetikzlibrary{intersections}
+
+%\begin{document}
+
+\pgfmathdeclarefunction{dnorm}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+\begin{tikzpicture}
+\begin{axis}[
+    domain=0:12,
+    samples=101,
+    height=5cm,
+    width=10cm
+]
+
+% Fill aread under both curves, start stacking
+\addplot [
+    fill=yellow,
+    draw=none,
+    domain=0:6,
+    stack plots=y
+] {min(dnorm(4,1),dnorm(6.5,1.5)) } \closedcycle;
+
+% Stack difference between two curves on top, but only where the second curve is higher
+\addplot [
+    fill=orange,
+    draw=none,
+    domain=0:6,
+    stack plots=y
+] {max( dnorm(6.5,1.5) - dnorm(4,1),0)} \closedcycle;
+
+% Fill tail of first curve (without stacking)
+\addplot [
+    fill=cyan,
+    draw=none,
+    domain=6:12
+] {dnorm(4,1)} \closedcycle;
+
+
+% Draw curves
+\addplot [thin, smooth, name path global=first] {dnorm(4,1)};
+\addplot [thin, smooth, name path global=second] {dnorm(6.5,1.5)};
+
+% Draw vertical line:
+\draw [red, thick] ({rel axis cs:0,0}-|{axis cs:6,0}) -- ({rel axis cs:0,1}-|{axis cs:6,0});
+\draw [red, thick, name intersections={of={first and second}}] ({rel axis cs:0,0}-|intersection-1) -- ({rel axis cs:0,1}-|intersection-1);
+\end{axis}
+\end{tikzpicture}
+
+%\end{document}

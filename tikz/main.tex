@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{mathpazo,amsfonts,nicefrac}
+\usepackage{amsmath,amssymb}
+
+\usepackage{graphicx}
+
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata,mindmap,shapes,positioning,snakes,calc}
+\tikzset{
+  tag/.style={
+    rectangle,
+    draw=black, very thick,
+    text width=4em,
+    minimum height=2em,
+    text centered},
+  commit/.style={
+    circle,
+    draw=black, very thick,
+    text width=1em,
+    minimum height=1em,
+    text centered},
+  point/.style={coordinate},
+}
+
+\input{custom-colors}
+
+\begin{document}
+
+\input{charts/Series}
+\input{charts/Lines}
+\input{charts/AreaFilling}
+\input{charts/3DGrid}
+\input{charts/2DTo3D}
+
+\input{charts/fillarea}
+
+\input{charts/Scatter}
+\bigskip
+\input{charts/CSVScatterHistogram}
+
+\input{charts/Bar}
+\input{charts/Bar1}
+\input{charts/GroupedBar}
+\input{charts/StackedBar}
+\input{charts/SharedX}
+\input{charts/Pie}
+
+\input{charts/EmbededImages}
+\bigskip
+\input{charts/StackedImages}
+
+\input{charts/Diagram}
+\input{charts/FlowChart}
+\input{charts/Polyhedra}
+\input{charts/StatusTransferGraph}
+\input{charts/DirectedGraph}
+\input{charts/NeuralNetwork}
+\input{charts/Venn}
+\input{charts/MindMap}
+
+\input{charts/TextBox}
+
+
+%%% Application
+%\input{Application/perceptron}
+\end{document}

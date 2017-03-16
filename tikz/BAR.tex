@@ -1,0 +1,100 @@
+\documentclass{standalone}
+
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+
+\usepackage{mathpazo,amsfonts,nicefrac}
+\usepackage{amsmath,amssymb}
+
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{arrows,automata,mindmap,shapes,positioning,snakes,calc}
+
+\input{custom-colors}
+
+\begin{document}
+\begin{tikzpicture} 
+\begin{groupplot}[group style={group size=1 by 10,vertical sep=2cm,horizontal sep=4cm},
+height=6.5cm,width=8cm,axis y line=left,axis x line=bottom,
+y tick label style={
+        /pgf/number format/.cd,
+            fixed,
+            fixed zerofill,
+            precision=1,
+        /tikz/.cd
+},max space between ticks=20,legend cell align=left,
+legend style={anchor=west,at={(axis description cs:0.5,0.9)},font=\footnotesize}]
+
+\nextgroupplot[ybar,xlabel=Month,xmin=0.5,xmax=13.5,ymin=0,ymax=35,
+axis x line=bottom,axis y line=left,ylabel=New Electric Vehicles,
+width=0.9\textwidth,height=0.6\textwidth,ymajorgrids=true,bar width = 3 mm,xticklabels=\empty,
+extra x ticks={1,2,3,4,5,6,7,8,9,10,11,12},
+extra x tick labels = {Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct,Nov, Dec},
+]
+\addplot+[mark=none, blue_2b, very thick] coordinates {(1,3)(2,3)(3,7)(4,1)(5,28)(6,13)(7,4)(8,7)(9,4)(10,14)(11,10)(12,18)};
+
+\nextgroupplot[ybar, x=10mm,xmin = 0.5, xmax = 6.5, axis x line* = bottom, axis y line* = left,
+bar width =9mm, xticklabels = \empty, extra x ticks = {1,2,3,4,5,6},
+extra x tick labels = {A, B, C, D, E, F},]
+\addplot+[mark=none, purple!80, very thick] coordinates {(1,4)(2,5)(3,2)(4,3)(5,6)(6,2)};
+
+\nextgroupplot[ybar, enlargelimits=0.15, legend style={at={(0.5,-0.15)}, anchor=north,legend columns=-1},ylabel={Participants},symbolic x coords={A,B,C}, xtick=data,nodes near coords, 
+nodes near coords align={vertical}, legend style = {at={(0.5, 1.025)}, anchor = south, legend columns = -1, draw=none, area legend},area legend,]
+\addplot+[mark=none, red_8a, very thick] coordinates {(A,7) (B,9) (C,4)};
+\addplot+[darkblue] coordinates {(A,4) (B,4) (C,4)};
+\addplot+[lila_10b] coordinates {(A,1) (B,1) (C,1)};
+\legend{First,Second,Third}
+
+%% plain bar
+\nextgroupplot[
+			ybar,
+			xlabel = Year,
+			% xticklabels = none,
+			xtick=\empty,
+			extra x ticks = {1,2,3,4,5},
+			extra x tick labels = {2000,2005,2010,2015,2020},
+			ymin = 0,
+			ymax = 900,
+			axis x line* = bottom,
+			axis y line* = left,
+			ylabel= CO2 savings in g CO2/kWh,
+			width= 0.9\textwidth,
+			height = 0.5\textwidth,
+			ymajorgrids = true,
+			y tick label style = {/pgf/number format/use comma},
+			bar width = 6mm,
+			legend style = {at={(0.5, 1.025)}, anchor = south, legend columns = -1, draw=none, area legend},
+			area legend,]
+\addplot+[mark=none, blue_2b, very thick] table[x=year, y=de] {data/grouped-bar-chart.dat};
+\addplot+[mark=none, green_4b, very thick] table[x=year, y=at] {data/grouped-bar-chart.dat};
+\legend{Germany, Austria}
+
+%% stacked bar
+\nextgroupplot[
+			ybar stacked,
+			xlabel= Year,
+			ymajorgrids = true,
+			width = 0.9\textwidth,
+			height = 0.5\textwidth,
+			xmin = 1999.5,
+			xmax = 2009.5,
+			ymin = 0,
+			ymax = 70000,
+			axis x line* = bottom,
+			axis y line* = left,
+			xticklabels = none,
+			extra x ticks = {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009},
+			extra x tick labels = {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009},
+			legend style = {at={(0.6, 1.025)}, anchor = south, legend columns = -1, draw=none, area legend},  
+      area legend,
+			scaled ticks = false,
+]
+\addplot+[mark=none, fill=blue_2b, draw = blue_2b, bar width = 8mm] table[x=year, y=ror] {data/stacked-bar-chart.dat};
+\addplot+[mark=none, fill=lila_10b, draw = lila_10b, bar width = 8mm] table[x=year, y=storage] {data/stacked-bar-chart.dat};
+\addplot+[mark=none, fill=orange_6b, draw = orange_6b, bar width = 8mm] table[x=year, y=thermal] {data/stacked-bar-chart.dat};
+\addplot+[mark=none, fill=green_4b, draw = green_4b, bar width = 8mm] table[x=year, y=renewable] {data/stacked-bar-chart.dat};
+\legend{ROR, Storage power plant, Thermal power station, Renewable energy}
+
+\end{groupplot}
+\end{tikzpicture}
+
+\end{document}

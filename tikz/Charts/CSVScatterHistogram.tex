@@ -1,0 +1,52 @@
+\begin{tikzpicture}[
+    /pgfplots/scale only axis,
+    /pgfplots/width=6cm,
+    /pgfplots/height=6cm
+]
+
+%sepallength,sepalwidth,petallength,petalwidth,class
+\pgfplotstableread[x = sepallength, y = sepalwidth, col sep = comma]{data/iris.csv}\iris
+% The scatterplot
+\begin{axis}[
+    name=main axis % Name the axis, so we can position the histograms relative to this axis
+]
+\addplot [
+		scatter/classes={
+           0={mark=square*,blue},
+           1={mark=triangle*,orange},
+           2={mark=*,purple}
+        }, scatter,only marks,scatter src=explicit symbolic, mark size=1.5 
+		] table[meta=class]{\iris};
+\end{axis}
+
+
+% The histogram for the x axis
+\begin{axis}[
+    anchor=south west,
+    at=(main axis.north west),
+    height=2cm,
+    xtick=\empty
+]
+\addplot [
+    hist={data=x}, % By default, the y values would be used for calculating the histogram
+    fill=blue
+] table {\iris};
+\end{axis}
+
+
+% The histogram for the y axis
+\begin{axis}[
+    anchor=north west,
+    at=(main axis.north east),
+    width=2cm,
+    ytick=\empty
+]
+\addplot [
+    % For swapping the x and y axis, we have to change a couple of options...
+    hist={handler/.style={xbar interval}}, % ... use bars instead of columns ...
+    x filter/.code=\pgfmathparse{rawy}, % ... interpret the x values of the histogram as y values 
+    y filter/.code=\pgfmathparse{rawx}, % ... and vice versa.
+    fill=blue,
+] table {\iris};
+\end{axis}
+\end{tikzpicture}
