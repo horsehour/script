@@ -1,0 +1,16 @@
+#Thu Mar 16 16:56:26 EDT 2017
+\!/=
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.compliance=1.8
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source=1.8
+/instance/org.eclipse.jdt.launching/org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<vmSettings defaultVM\="52,org.eclipse.jdt.internal.launching.macosx.MacOSXType24,com.oracle.java.8u92.jdk" defaultVMConnector\="">\n<vmType id\="org.eclipse.jdt.internal.launching.macosx.MacOSXType">\n<vm id\="com.oracle.java.8u92.jdk" name\="Java SE 8 [1.8.0_92]" path\="/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home"/>\n</vmType>\n</vmSettings>\n
+/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.formatterprofiles.version=12
+/instance/org.eclipse.ui.workbench/org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\n<org.eclipse.ui.commands>\n<keyBinding contextId\="org.eclipse.jdt.ui.javaEditorScope" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="COMMAND+SHIFT+F"/>\n<keyBinding commandId\="org.eclipse.jdt.ui.edit.text.java.format" contextId\="org.eclipse.jdt.ui.javaEditorScope" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="COMMAND+["/>\n</org.eclipse.ui.commands>
+@org.eclipse.jdt.core=3.12.2.v20161117-1814
+@org.eclipse.jdt.launching=3.8.101.v20161111-2014
+@org.eclipse.jdt.ui=3.12.2.v20160929-0804
+@org.eclipse.ui.workbench=3.108.2.v20161025-2029
+file_export_version=3.0
