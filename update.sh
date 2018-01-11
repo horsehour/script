@@ -1,5 +1,6 @@
 #!/bin/bash
 
-cd "/Users/chjiang/GitHub/" $1
+git add *
+git commit -a
 
-git push origin master
+git push -u origin master

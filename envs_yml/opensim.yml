@@ -1,0 +1,39 @@
+name: opensim
+channels:
+- conda-forge
+- kidzik
+- defaults
+dependencies:
+- git=2.14.1=1
+- lapack=3.6.1=1
+- libiconv=1.14=4
+- certifi=2016.2.28=py27_0
+- curl=7.54.1=0
+- expat=2.1.0=0
+- krb5=1.13.2=0
+- libgfortran=3.0.0=1
+- libssh2=1.8.0=0
+- openssl=1.0.2l=0
+- pip=9.0.1=py27_1
+- python=2.7.13=0
+- readline=6.2=2
+- setuptools=36.4.0=py27_0
+- sqlite=3.13.0=0
+- tk=8.5.18=0
+- wheel=0.29.0=py27_0
+- zlib=1.2.11=0
+- freeglut=2.8.1=0
+- openblas=0.2.19=0
+- opensim=4.0.0=py27_12
+- pip:
+  - chardet==3.0.4
+  - gym==0.9.3
+  - idna==2.6
+  - numpy==1.13.1
+  - osim-rl==1.4.1
+  - pyglet==1.2.4
+  - requests==2.18.4
+  - six==1.10.0
+  - urllib3==1.22
+prefix: /Users/chjiang/miniconda3/envs/opensim
+
