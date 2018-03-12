@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Dictionaries translation word definition pronunciation Options</title>
+    <script src="jquery.js"></script>
+    <script src="ska.js"></script>
+    <script src="options.js"></script>
+    <link rel="stylesheet" href="css/options.css" />
+</head>
+
+<body>
+    <h1 id="title">
+        <div id="title-main">
+            Skalkaz Option Page
+        </div></h1>
+    <b>Language:</b>
+    <br />
+    <div style="margin-left: 7em;width:500px;text-align:justify;text-justify:inter-word;">
+        Basically, the extension only translates from English to any (but not English) language, particularly from English to your native language. The app visits the Google Translator site in the background to find and retrieve the required word. Once you set the desired language pair on the Google Translator site, the app will use that setup. So check out <a target="_blank" href='http://translate.google.com/?q=choose+from+English+to+your+destination+language'>Google Translator</a> and configure as you wish.
+    </div>
+    <br />
+    <b>Dictionaries:</b>
+    <br />
+    <input type="checkbox" id="goog" />
+    <label for="goog" style="margin-left: 7em;"><span></span>show translation based on <a href="https://translate.google.com/" target="_blank">Google Translate</a></label>
+    <br />
+    <input type="checkbox" id="goog2" />
+    <label for="goog2" style="margin-left: 9em;"><span></span>2-step translation: first you see '???' and you have to click on it to get the translation (recommended).</label>
+    <br />
+    <input type="checkbox" id="long_option" />
+    <label for="long_option" style="margin-left: 7em;"><span></span>show definition based on <a target="_blank" href="http://www.ldoceonline.com/dictionary/tit">Longman dictionary</a>
+    </label> with max number of definitions:
+    <select id="longhany" style="margin-left: 0em;">
+        <option id="h1">1</option>
+        <option id="h2">2</option>
+        <option id="h3">3</option>
+        <option id="h4">4</option>
+        <option id="h5">5</option>
+        <option id="h6">6</option>
+        <option id="h7">7</option>
+        <option id="h8">8</option>
+        <option id="h9">9</option>
+        <option id="h10">10</option>
+        <option id="h11">all</option>
+    </select>
+    <br />
+
+    <input type="checkbox" id="free" />
+    <label for="free" style="margin-left: 7em;"><span></span>show phonetic transcription based on Oxford dictionary</label>
+    <br />
+
+    <input type="checkbox" id="how" />
+    <label for="how" style="margin-left: 7em;"><span></span>automatic pronunciation based on:</label>
+    <input type="radio" id="pronunciation1" name="pronunciation" value="1" />
+    <label for="pronunciation1" style="margin-left: 0em;"><span></span><a href="http://howjsay.com/pronunciation-of-naughty" target="_blank">howjsay</a></label>
+    <input type="radio" id="pronunciation2" name="pronunciation" value="2" />
+    <label for="pronunciation2"><span></span><a href="http://www.learnersdictionary.com/definition/naughty" target="_blank">Merriam-Webster</a></label>
+    <input type="radio" id="pronunciation3" name="pronunciation" value="3" />
+    <label for="pronunciation3"><span></span><a href="http://www.oxfordlearnersdictionaries.com/definition/english/naughty?q=naughty" target="_blank">Oxford</a></label>
+    <br />
+    <input type="checkbox" id="ling" />
+    <label for="ling" style="margin-left: 7em;"><span></span>show example sentences based on </label> <a href="http://www.ldoceonline.com/dictionary/geek" target="_blank">Longman dictionary</a>
+     with maximal number of sentences: <select id="hanysentence" style="margin-left: 0em;">
+        <option id="y1">1</option>
+        <option id="y2">2</option>
+        <option id="y3">3</option>
+        <option id="y4">4</option>
+        <option id="y5">5</option>
+        <option id="y6">6</option>
+        <option id="y7">7</option>
+    </select>
+    <br />
+    <span style="margin-left: 7em;">which dialect to prefer:<span>
+    <input type="radio" id="phon1" name="phon" value="1" />
+    <label for="phon1" style="margin-left: 0em;"><span></span>British English</label>
+    <input type="radio" id="phon2" name="phon" value="2" />
+    <label for="phon2"><span></span>American English</label>
+    <br />
+    <b>Usage:</b>
+    <ul style="margin-left: 5em;margin-top: 0em">
+      <li>
+          let the extension run on local files (e.g. <span style="color:#c00">PDF</span>) and/or in incognito mode by checking the proper checkboxes under Google Extensions.
+      </li>
+        <li>
+            right click on the selected word and choose the proper item. This is the only method, which works with <span style="color:#c00">PDF file</span>.
+        </li>
+        <li>
+            select a word and click on the extension's icon (not prefered)
+        </li>
+        <li>
+            press a meta key = <select id="metakey">
+                <option id="none">    </option>
+                <option id="ctrl">ctrl</option>
+            </select>
+            and single click on the word <span id="ref15" style="display:none;color:green"> (Option saved. Refresh all the pages.)</span>
+        </li>
+        <li>
+            <input type="checkbox" id="dbl" />
+            <label for="dbl"><span></span>
+            </label>
+            double click on the word (<span style="color:#c00">recommended</span>) <span id="ref" style="display:none;color:green"> (Option saved. Refresh on the pages needed.)</span>
+        </li>
+        <li>
+            <input type="checkbox" id="searchbox" />
+            <label for="searchbox"><span></span>
+            </label>
+            display a search box in the popup <span id="ref2" style="display:none;color:green"> (Option saved.)</span>
+        </li>
+    </ul>
+    <br />
+    <div style="font-family:Arial,Helvetica,sans-serif; font-size: 15;box-shadow:3px 3px 3px 2px rgba(0,0,0,0.34);border-radius:10px;text-align:center;margin-left: 20em;width:400px; padding: 10px;background: rgb(211, 251, 226)">
+        If you love my app give five stars on <a href="https://chrome.google.com/webstore/detail/neomigpibafpboiknmijddgnncengfnm/reviews" target="_blank">Chrome Webstore</a> or leave a feedback below if you don't like something.
+    </div>
+    <br />
+    <br />
+    <div style="font-family:Arial,Helvetica,sans-serif; font-size: 15;box-shadow:3px 3px 3px 2px rgba(0,0,0,0.34);border-radius:10px;text-align:center;margin-left: 20em;width:400px; padding: 10px;background: rgb(211, 251, 226)">
+        Donation. This app is ever-free, you even can't donate it directly. However I have a similary cool web app for profit: <a href="https://ziteboard.com" target="_blank">Ziteboard</a>. If you can afford, support me buying a Pro account for $5.
+    </div>
+    <br />
+
+    <br />
+    <b>Feedback:</b>
+    <br />
+    <div style="margin-left: 7em;width:670px;text-align:justify;text-justify:inter-word;">
+        Have any ideas or suggestions for this app? I'd love to hear them! If you want to report a problem, be specific and detailed, please. I can't do too much with "not work", because it works for me.
+    </div>
+
+    <br />
+    <textarea style="margin-left: 8em;" class="textarea" id="ideabox"></textarea>
+    <br />
+    <button style="margin-left: 8em;" id="postbutton">
+        send
+    </button>
+    <br />
+    <br />
+    <div style="margin-left: 8em; width:800px; background-color: #ddd" id='ideamessage'></div>
+
+    <br />
+    <b>Hangouts Audio Chat </b>(<span style="color:#c00">experimental</span>):
+    <br />
+    <div style="margin-left: 7em;width:670px;text-align:justify;text-justify:inter-word;">
+        <input type="checkbox" id="chat_enable" /><label for="chat_enable" ><span></span>enable audio chat</label><br />
+        Do you want to talk with other users to practice English? If so, click their names in the popup to join their Hangouts link, or create your own Hangouts link. Steps: visit <a href="https://hangouts.google.com" target="_blank">https://hangouts.google.com</a> and log in; click VIDEO CALL; get the sharable link and paste below here. Also choose a display name.<br />
+        <br />
+        <span id="chat_span">
+          <input type="checkbox" id="chat_display" /><label for="chat_display" ><span></span>show my link to each user</label><br />
+          Display name: <input type="text" id="chat_display_name" size="20" style="margin-bottom: 3px;" /> <span id="ref32" style="display:none;color:green"> (Saved.)</span><br />
+          Hangouts link: <input type="text" id="chat_link" size="60" style="margin-bottom: 3px;" /> <span id="ref33" style="display:none;color:green"> (Saved.)</span> <span id="ref34" style="display:none;color:red"> Invalid link.</span><br />
+        </span>
+    </div>
+    <br />
+
+    <b>Others:</b>
+    <br />
+
+    <select id="fontsize" style="margin-left: 8em;margin-top: 3px;margin-bottom: 3px;">
+        <option id="o8">8</option>
+        <option id="o9">9</option>
+        <option id="o10">10</option>
+        <option id="o11">11</option>
+        <option id="o12">12</option>
+        <option id="o13">13</option>
+        <option id="o14">14</option>
+        <option id="o15">15</option>
+        <option id="o16">16</option>
+        <option id="o17">17</option>
+        <option id="o18">18</option>
+        <option id="o19">19</option>
+        <option id="o20">20</option>
+        <option id="o30">30</option>
+        <option id="o40">40</option>
+        <option id="o50">50</option>
+    </select>
+    font size
+    <br />
+
+    <input type="text" id="maxwidth" size="4" style="margin-left: 8em;margin-bottom: 3px;" /> max width of pop-up window in pixel
+    <br />
+    <input type="text" id="maxheight" size="4" style="margin-left: 8em;margin-bottom: 3px;" /> max height of pop-up window in pixel
+    <br />
+    <input type="text" id="disptime" size="4" style="margin-left: 8em;margin-bottom: 3px;" /> pop-up visibility time in seconds <span id="dtime" style="display:none;color:green"> (Option saved. Refresh on the pages needed.)</span>
+    <br />
+    <input type="checkbox" id="https_terminate" />
+    <label for="https_terminate" style="margin-left: 8em;"><span></span>suspend working on https sites</label>
+    <br />
+    <input type="checkbox" id="clear_design" />
+    <label for="clear_design" style="margin-left: 8em;"><span></span>display logos (of etymology and Ziteboard) and settings icon</label>
+    <br />
+    <br />
+    <b>History:</b>
+    <br />
+    <input type="button" id="showbutton" value="show history" style="margin-left: 8em;" />
+    <input type="button" id="deletebutton" value="delete history" />
+    <input type="button" id="exportbutton" value="export CSV" />
+    <br />
+    <br />
+    <div id=export style="display:none">
+        <TEXTAREA style="margin-left: 8em;" id="exp"></TEXTAREA>
+    </div>
+    <div id="show"></div>
+</body>
+
+</html>

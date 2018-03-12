@@ -1,0 +1,38 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+    "name": "English dictionary translate pronunciation",
+    "description": "Best free online chrome app english dictionaries for translation selected word pronunciation loud language pronounce automatically",
+    "version": "3.3.8",
+    "minimum_chrome_version": "20.0.0.0",
+    "manifest_version": 2,
+    "background": {
+        "page": "background.html"
+    },
+    "permissions": ["contextMenus", "tabs", "<all_urls>"],
+    "options_page": "options.html",
+    "browser_action": {
+        "default_icon": "pics/logo_19.png",
+        "default_title": "Select a word and click here. Also check the option (right click here).",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>","http://*/*", "https://*/*"],
+            "js": ["jquery.js", "js/messi.js", "ska.js", "contentscript.js"],
+            "css": ["css/messi.css"],
+            "run_at": "document_end",
+            "all_frames": true
+        }
+    ],
+    "options_page": "options.html",
+    "web_accessible_resources": ["css/divpop.css", "pics/logo_19.png", "options.html", "pics/option.png", "pics/close.png", "pics/facebook.png", "pics/etymology.png", "pics/heritage.png", "pics/ziteboard_dictionary.png", "pics/twitter.png", "pics/long_kicsi.png", "pics/goog_kicsi.png", "pics/important.png", "pics/oxford_kicsi.jpg", "pics/how_kicsi.jpg", "pics/yourdictionary_kicsi.png","pics/play.png"],
+
+    "icons": {
+        "16": "pics/logo_16.png",
+        "48": "pics/logo_48.png",
+        "128": "pics/logo_128.png"
+    }
+
+
+}

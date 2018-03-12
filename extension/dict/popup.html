@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css">
+	html {
+		border:solid red 0px;
+	}
+	body {
+		background-color: #eaeaeb;
+		border:solid green 0px;
+	}
+	.div {
+		font-family:Arial,Helvetica,sans-serif;
+		padding-left: 5px;
+		background-color: #eaeaeb;
+		text-align:left;
+		overflow: auto;
+	}
+	.div2 {
+		font-family:Arial,Helvetica,sans-serif;
+		padding-left: 5px;
+		background-color: #eaeaeb;
+		text-align:left;
+		overflow: auto;
+	}
+	ul{
+		border: 0px red solid;
+		padding: 0px;
+		margin: 0px;
+    	list-style-type:square;
+    	list-style-position:inside;
+    	list-style-image: none;
+	}
+	ol{
+	    background-color: #eaeaeb;
+	    padding-left:0px;
+	    margin: 0px;
+	    list-style-type:decimal;
+	    list-style-position:inside;
+	    list-style-image: none;
+	}
+	ol>li{
+	    background-color: #eaeaeb;
+	    margin: 0px;
+	    color: rgb(255,61,0);
+	    text-align: left;
+	    font-weight: bold;
+	    }
+	ol>li>span{
+	    color: black;
+	    font-weight: normal;
+	    }
+	strong{
+	    color: rgb(11,152,3);
+	}
+
+	 .link{
+	    text-decoration:none;
+	    color: black !important;
+	}
+
+	</style>
+	<script src="jquery.js"></script>
+	<script src="ska.js"></script>
+
+</head>
+
+<body>
+	<div id="optionclose" style="float:right;"><a title="option" href="options.html"><img width="20" src="pics/option.png" alt="option" /></a><a id="popupclose" title="close" href="#"><img width="19" src="pics/close.png" alt="close" /></a></div>
+	<div id="div0" class="tonguediv2" style="padding:0px"><input id="ska_search" style="margin-top:5px;margin-bottom:5px" type="text"></div>
+	<div class="div2" id='div1'><span style="color:red"></span></div>
+	<div class="div" id='div3'> </div>
+	<div class="div2" id='div2' style="max-height:400px;"></div><br />
+	<div class="div" id='div4' style="max-height:200px;"></div>
+	<div class="div2" id="div5"></div>
+	<div class="div2" id="div6"></div>
+	<iframe id="howframe" style="height:0px;border:none;visibility:hidden;"></iframe>
+	<div class="div" id="skanews" style="display:none"><input type="button" value="hide" id="hide" /><br /></div>
+	<a id="ety" style="background-color:#eaeaeb;" href="http://www.etymonline.com/" title="Etymology Dictionary" target="_blank"><img src="/pics/etymology.png" style="width:20px;height:20px" /></a>
+	<a id="ska_heritage" style="background-color:#eaeaeb;" href="http://ahdictionary.com/word/search.html?q=" title="The American Heritage Dictionary of English Language" target="_blank"><img src="/pics/heritage.png" style="width:20px;height:20px" /></a>
+	<a id="ska_ziteboard" style="background-color:#eaeaeb;" href="https://ziteboard.com" title="Ziteboard | teaching English tool" target="_blank"><img src="/pics/ziteboard_dictionary.png" style="height:20px" /></a>
+<script src="popup.js"></script>
+</body>
+
+</html>

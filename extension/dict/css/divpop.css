@@ -1,0 +1,127 @@
+#tongue {
+	position:fixed;
+	right:10px;
+	top:30px;
+	border:groove;
+	z-index:999999999999;
+	background-image:none;
+	background-color:#eaeaeb;
+	color:black;
+	overflow:auto;
+	padding:0px;
+	margin:0px;
+	line-height: normal;
+	width:auto;
+}
+#tongue *{
+    line-height: normal;
+}
+#tongue div{
+    width:auto;
+}
+#tongue div, #tongue img, #tongue ul{
+	border: 0px red solid;
+	padding: 0px;
+	margin: 0px;
+	margin-left: 5px;
+}
+
+#tongue img{
+    display: inline;
+}
+#tongue ul{
+    background-color:#eaeaeb;
+    background-image: none;
+    padding-left:0px;
+    list-style: square;
+    list-style-type:square;
+    list-style-position:inside;
+    list-style-image: none;
+}
+#tongue li{
+    background-color:#eaeaeb;
+    background-image: none;
+    padding-left:0px;
+    margin: 0px;
+    color: black;
+    list-style: square;
+    list-style-position:inside;
+    list-style-image: none;
+    padding: 0px;
+    border: 0px;
+    font-size: inherit;
+    text-indent: 0px;
+    }
+#tongue ol{
+    background-color: #eaeaeb;
+    background-image: none;
+    padding-left:0px;
+    margin: 0px;
+    list-style-type:decimal;
+    list-style-position:inside;
+    list-style-image: none;
+}
+#tongue ol>li{
+    background-color: #eaeaeb;
+    background-image: none;
+    margin: 0px;
+    padding: 0px !important;
+    border: 0px;
+    color: rgb(255,61,0);
+    text-align: left;
+    list-style-type:decimal;
+    font-weight: bold;
+    list-style-position:inside;
+    list-style-image: none;
+    text-indent: 0px;
+    font-size: inherit;
+    }
+#tongue ol>li::before{
+	content: none !important;
+}
+#tongue ol>li>span{
+    color: black;
+    font-weight: normal;
+    }
+#tongue strong{
+    background-color:#eaeaeb;
+    color: rgb(11,152,3);
+}
+
+#tongue .tonguediv{
+    font-family:Arial,Helvetica,sans-serif;
+    padding-left: 5px;
+    background-color: #eaeaeb;
+    text-align:left;
+    overflow: auto;
+    position: static;
+}
+#tongue .tonguediv2{
+    font-family:Arial,Helvetica,sans-serif;
+    padding-left: 5px;
+    background-color: #eaeaeb;
+    text-align:left;
+    overflow: auto;
+    position: static;
+}
+#tongue b,#tongue i {
+	color: black;
+	background-image : none;
+}
+#tongue b {
+	font-weight: bold;
+}
+#tongue i {
+	font-style:italic;
+	position: static;
+}
+#tongue .link{
+    text-decoration:none;
+    color: black !important;
+    background-color: inherit;
+    font-weight: bold;
+    text-align: left;
+    display: inline;
+    position: static;
+}
+
