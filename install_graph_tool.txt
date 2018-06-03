@@ -1,0 +1,10 @@
+Install graph-tool to visualize the network:
+
+1. Search https://anaconda.org/anaconda/anaconda-navigator the channel for graph-tool.
+For example, the channel named 'vgauthier' https://anaconda.org/vgauthier/graph-tool for os x 64
+
+2. Install dependencies and graph-tool in a conda virtual environment
+2.2 conda install pygobject -c conda-forge
+2.1 conda install gtk3 -c pkgw-forge
+2.3 conda install matplotlib -c conda-forge
+2.4 conda install graph-tool -c vgauthier
