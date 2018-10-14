@@ -8,3 +8,44 @@ For example, the channel named 'vgauthier' https://anaconda.org/vgauthier/graph-
 2.1 conda install gtk3 -c pkgw-forge
 2.3 conda install matplotlib -c conda-forge
 2.4 conda install graph-tool -c vgauthier
+
+3. brew install graph-tool --with-python3
+
+3. python > import graph_tool
+
+ImportError: dlopen(/Users/chjiang/miniconda3/envs/netsci/lib/python3.6/site-packages/graph_tool/libgraph_tool_core.so, 9): Library not loaded: @rpath/libboost_python3.dylib
+  Referenced from: /Users/chjiang/miniconda3/envs/netsci/lib/python3.6/site-packages/graph_tool/libgraph_tool_core.so
+  Reason: image not found
+
+3.1 Find all dependencies of libgraph_tool_core.so
+
+otool -L /Users/chjiang/miniconda3/envs/netsci/lib/python3.6/site-packages/graph_tool/libgraph_tool_core.so
+
+	@rpath/libpython3.6m.dylib (compatibility version 3.6.0, current version 3.6.0)
+	@rpath/libboost_iostreams.dylib (compatibility version 0.0.0, current version 0.0.0)
+	@rpath/libboost_python3.dylib (compatibility version 0.0.0, current version 0.0.0)
+	@rpath/libboost_regex.dylib (compatibility version 0.0.0, current version 0.0.0)
+	@rpath/libboost_context.dylib (compatibility version 0.0.0, current version 0.0.0)
+	@rpath/libboost_coroutine.dylib (compatibility version 0.0.0, current version 0.0.0)
+	@rpath/libexpat.1.dylib (compatibility version 8.0.0, current version 8.7.0)
+	@rpath/libomp.dylib (compatibility version 5.0.0, current version 5.0.0)
+	@rpath/libgmp.10.dylib (compatibility version 14.0.0, current version 14.2.0)
+	/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 400.9.0)
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1252.0.0)
+
+3.2 Find the place of 
+@rpath/libboost_python3.dylib
+
+3.3 Change the install name of the dependency
+install_name_tool -change @rpath/libboost_python3.dylib /Users/chjiang/miniconda3/pkgs/boost-1.66.0-py36_1/lib/libboost_python3.dylib /Users/chjiang/miniconda3/envs/netsci/lib/python3.6/site-packages/graph_tool/libgraph_tool_core.so
+
+4. python > import graph_tool
+ImportError: dlopen(/Users/chjiang/miniconda3/envs/netsci/lib/python3.6/site-packages/graph_tool/libgraph_tool_core.so, 9): Symbol not found: __ZNK5boost16re_detail_10660031cpp_regex_traits_implementationIcE17transform_primaryEPKcS4_
+  Referenced from: /Users/chjiang/miniconda3/envs/netsci/lib/python3.6/site-packages/graph_tool/libgraph_tool_core.so
+  Expected in: /Users/chjiang/miniconda3/envs/netsci/lib/libboost_regex.dylib
+ in /Users/chjiang/miniconda3/envs/netsci/lib/python3.6/site-packages/graph_tool/libgraph_tool_core.so
+
+
+5. brew install --build-from-source -with-openmp --with-python3 graph-tool
+otool /Users/chjiang/miniconda3/lib/libgdk-3.0.dylib
+install_name_tool -change @rpath/libgdk_pixbuf-2.0.0.dylib /Users/chjiang/miniconda3/lib/libgdk_pixbuf-2.0.0.dylib libgdk-3.0.dylib
